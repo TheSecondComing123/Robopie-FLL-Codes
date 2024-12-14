@@ -1,6 +1,6 @@
 def run_6():
     #Aligner two spaces right of corner
-    run_lift_arm(300)
+    #run_lift_arm(300)
     forward(150)
     turn(-70)
     forward(170)
