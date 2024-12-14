@@ -1,3 +1,48 @@
+"""
+generate_combined.py
+
+This script combines the contents of a boilerplate file (`boilerplate.py`) with multiple `run_*` files
+from the current directory, dynamically detects functions defined in the `run_*` files, and generates
+a single output file (`combined_script.py`). At the end of the combined file, it adds calls to all 
+valid functions found in the `run_*` files in sorted order.
+
+The script handles two types of function naming conventions:
+1. Functions named `run<x>()`, where `<x>` is a number (e.g., `run1()`).
+2. Functions named `run<x><a/b/c/d>()`, where `<x>` is a number and `<a/b/c/d>` is an optional 
+   letter suffix (e.g., `run1a()`, `run2c()`).
+
+Features:
+- Combines the boilerplate file with all `run_*` files, maintaining their order.
+- Detects valid `run_*` functions dynamically using regex.
+- Appends calls to all detected functions at the end of the combined script.
+- Outputs the final result to `combined_script.py`.
+
+File Requirements:
+- The script assumes a `boilerplate.py` file exists in the directory.
+- The `run_*` files must follow the naming pattern: `run_<number>.py` or `run_<number><a/b/c/d>.py`.
+
+Usage:
+Run the script in the directory containing `boilerplate.py` and `run_*` files:
+    python generate_combined.py
+
+The output file `combined_script.py` will contain:
+1. The contents of `boilerplate.py`.
+2. The contents of all `run_*` files, in sorted order.
+3. Function calls to all detected `run_*` functions.
+
+Example:
+If the directory contains:
+- boilerplate.py
+- run_1.py (with `run_1a()` and `run_1b()`)
+- run_2.py (with `run2()`)
+
+The generated `combined_script.py` will contain:
+- Contents of `boilerplate.py`
+- Contents of `run_1.py` and `run_2.py`
+- Calls to `run_1a()`, `run_1b()`, and `run2()` in that order.
+
+"""
+
 import os
 import re
 
