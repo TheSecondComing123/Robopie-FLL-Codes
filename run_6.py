@@ -1,4 +1,4 @@
-def run_6():
+def run6():
     #Aligner two spaces right of corner
     run_lift_arm(300)
     forward(150)
