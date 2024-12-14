@@ -1,6 +1,6 @@
 def run_6():
     #Aligner two spaces right of corner
-    #run_lift_arm(300)
+    run_lift_arm(300)
     forward(150)
     turn(-70)
     forward(170)
@@ -16,7 +16,7 @@ def run_6():
     #Coral Nursery
     forward(-200)
     run_lift_arm(-100)
-    turn(130)
+    turn(140)
     forward(200)
     turn(-65)
     #Coral Habitat
@@ -27,9 +27,9 @@ def run_6():
     #Angler Fish
     run_lift_arm(290)
     turn(-95)
-    forward(325)
+    forward(300)
     turn(60)
-    forward(150)
+    forward(160)
     run_lift_arm(-305, 660)
     turn(-40)
     forward(170)
