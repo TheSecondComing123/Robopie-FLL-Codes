@@ -111,7 +111,7 @@ def run6():
     turn(140)
     forward(200)
     turn(-65)
-    #Coral Habitat
+    # Coral Habitat
     run_lift_arm(-300, 660)
     forward(20)
     run_lift_arm(-25, 660)
