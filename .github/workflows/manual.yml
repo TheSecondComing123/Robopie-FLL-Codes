@@ -1,6 +1,45 @@
-name: Manual Generate Combined Script
+# name: Manual Generate Combined Script
+
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       commit_message:
+#         description: "Commit message for the generated combined script"
+#         required: true
+#         default: "Update combined_script.py"
+
+# jobs:
+#   generate-script:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Checkout repository
+#         uses: actions/checkout@v3
+
+#       - name: Set up Python
+#         uses: actions/setup-python@v4
+#         with:
+#           python-version: "3.x"
+
+#       - name: Run generate_combined.py
+#         run: |
+#           python generate_combined.py
+
+#       - name: Commit changes
+#         run: |
+#           git config --global user.email "actions@github.com"
+#           git config --global user.name "GitHub Actions"
+#           git add combined_script.py
+#           git commit -m "${{ github.event.inputs.commit_message }}"
+#           git push
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+name: Generate Combined Script
 
 on:
+  push:
+    branches:
+      - main  # Replace 'main' with your branch name if it's different
   workflow_dispatch:
     inputs:
       commit_message:
@@ -29,7 +68,7 @@ jobs:
           git config --global user.email "actions@github.com"
           git config --global user.name "GitHub Actions"
           git add combined_script.py
-          git commit -m "${{ github.event.inputs.commit_message }}"
+          git commit -m "${{ github.event.inputs.commit_message || 'Update combined_script.py' }}"
           git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
