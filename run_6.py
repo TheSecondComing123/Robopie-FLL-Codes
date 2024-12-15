@@ -8,7 +8,7 @@ def run6():
     forward(620)
     turn(115)
     forward(58)
-    #Shark
+    # Shark
     run_lift_arm(-320, 1660)
     run_lift_arm(240)
     forward(-150)
