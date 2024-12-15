@@ -13,18 +13,18 @@ def run6():
     run_lift_arm(240)
     forward(-150)
     turn(-238)
-    #Coral Nursery
+    # Coral Nursery
     forward(-200)
     run_lift_arm(-100)
     turn(140)
     forward(200)
     turn(-65)
-    #Coral Habitat
+    # Coral Habitat
     run_lift_arm(-300, 660)
     forward(20)
     run_lift_arm(-25, 660)
     forward(-60)
-    #Angler Fish
+    # Angler Fish
     run_lift_arm(290)
     turn(-95)
     forward(300)
