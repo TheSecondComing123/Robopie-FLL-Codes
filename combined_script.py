@@ -26,6 +26,7 @@ def run_lift_arm(degrees, speed=360): # positive = up, negative = down
 
 # --- run_1.py ---
 def run1a():
+    # Octopus
     forward(0.2)
     turn(85)
     forward(2)
@@ -68,25 +69,26 @@ def run4b():
     forward(-345, 150)
 
 def run4c():
-    forward(20)
+    # Artifical Habitat
+    motor.run_for_degrees(lift_arm_port, -250, 2200)
+    forward(60)
     turn(60)
     forward(200)
-    turn(90)
+    turn(100)
     forward(300)
-    turn(50)
-    forward(140)
-    turn(-110,2200)
-    forward(-150)
-    forward(230)
-    motor.run_for_degrees(lift_arm_port,600,2200)
-    forward(300)
-    forward(-250)
-    motor.run_for_degrees(lift_arm_port,-200,2200)
-    turn(-10)
-    forward(400,2200)
-    forward(-240)
-    motor.run_for_degrees(lift_arm_port,100,2000)
-    forward(200)
+    turn(45)
+    forward(100)
+    turn(-100,2200)
+    turn(10,2200)
+    forward(-100)
+    forward(180)
+    motor.run_for_degrees(lift_arm_port, 500, 2200)
+    forward(250)
+    forward(-175)
+    motor.run_for_degrees(lift_arm_port, -210, 2200)
+    turn(23)
+    forward(280,2200)
+    forward(-500)
 
 
 # --- run_6.py ---
