@@ -8,20 +8,24 @@ razor_blade_port = port.C
 left_motor_port = port.A
 right_motor_port = port.E
 
-def forward(degrees, speed=360): # postitive = forward, negative = backward
+def forward(degrees, speed=360, *, delay=0.25): # postitive = forward, negative = backward
     motor.run_for_degrees(left_motor_port, -degrees, speed)
     motor.run_for_degrees(right_motor_port, degrees, speed)
-    time.sleep(abs(degrees) / speed + 0.25)
+    time.sleep(abs(degrees) / speed + delay)
 
-def turn(degrees, speed=360): # positive = left, negative = right
+def turn(degrees, speed=360, *, delay=0.25): # positive = left, negative = right
     degrees = int(degrees)
     motor.run_for_degrees(left_motor_port, degrees, speed)
     motor.run_for_degrees(right_motor_port, degrees, speed)
-    time.sleep(abs(degrees) / speed + 0.25)
+    time.sleep(abs(degrees) / speed + delay)
 
-def run_lift_arm(degrees, speed=360): # positive = up, negative = down
+def run_lift_arm(degrees, speed=360, *, delay=0.25): # positive = up, negative = down
     motor.run_for_degrees(lift_arm_port, degrees, speed)
-    time.sleep(abs(degrees) / speed + 0.25)
+    time.sleep(abs(degrees) / speed + delay)
+
+def reset_lift_arm_port(): 
+    motor.run_for_degrees(lift_arm_port, 300, 360) 
+    time.sleep(1)
 
 
 # --- run_1.py ---
@@ -69,7 +73,6 @@ def run4b():
     forward(-345, 150)
 
 def run4c():
-    # Artifical Habitat
     motor.run_for_degrees(lift_arm_port, -250, 2200)
     forward(60)
     turn(60)
@@ -78,17 +81,67 @@ def run4c():
     forward(300)
     turn(45)
     forward(100)
-    turn(-100,2200)
+    turn(-102,2200)
     turn(10,2200)
     forward(-100)
+    #turn(15)
     forward(180)
-    motor.run_for_degrees(lift_arm_port, 500, 2200)
+    # turn(70)
+    motor.run_for_degrees(lift_arm_port, 550, 2200)
     forward(250)
     forward(-175)
     motor.run_for_degrees(lift_arm_port, -210, 2200)
-    turn(23)
+    turn(-10)
     forward(280,2200)
     forward(-500)
+    # motor.run_for_degrees(lift_arm_port, -100, 2000)
+    # motor.run_for_degrees(lift_arm_port,100,2000)
+    # forward(200)
+
+def run4c2():
+    forward(40)
+    turn(60)
+    forward(200)
+    turn(90)
+    forward(290)
+    turn(60)
+
+
+# --- run_5.py ---
+def run5():  
+    # part of pink run!!! this should be taken when it arrives to be aligned.  
+    motor.run_for_degrees(lift_arm_port, -250, 2200)
+    forward(120)
+    turn(-90)
+    forward(200)
+    turn(-25)
+    forward(400)
+    turn(-30)
+    forward(1200)
+    turn(-70)
+    forward(600)
+    
+def run5b():
+    motor.run_for_degrees(lift_arm_port, 180,2200)
+    forward(230)
+    turn(35)
+    forward(200)
+    turn(42)
+    forward(300)
+    turn(-30)
+    forward(200)
+    motor.run_for_degrees(lift_arm_port, -1000,2200)
+    forward(180)
+    forward(-200,2200)
+    turn(40,2200)
+    motor.run_for_degrees(lift_arm_port, -400,2200)
+    forward(60,2200)
+    turn(40,2200)
+    #forward(90)
+    #turn(-300)
+    #forward(300)
+    #turn(20)
+    #turn(50)
 
 
 # --- run_6.py ---
@@ -136,4 +189,6 @@ run1b()
 run4a()
 run4b()
 run4c()
+run5()
+run5b()
 run6()
