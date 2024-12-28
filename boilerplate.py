@@ -25,4 +25,4 @@ def run_lift_arm(degrees, speed=360, *, delay=0.25): # positive = up, negative =
 
 def reset_lift_arm_port(): 
     motor.run_for_degrees(lift_arm_port, 300, 360) 
-    time.sleep(1)
+    time.sleep(0.25)
