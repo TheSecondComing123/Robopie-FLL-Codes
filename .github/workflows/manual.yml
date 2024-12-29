@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - main
+    paths:
+      - '**/*.py'  # Trigger only for changes to .py files
   workflow_dispatch:
     inputs:
       commit_message:
