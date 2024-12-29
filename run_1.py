@@ -6,7 +6,7 @@ def run1a():
     forward(700)
 
 def run1b():
-    # Change Shipping Lanes
+    # Change Shipping Lane
     forward(-360)
     turn(-110)
     motor.run_for_degrees(lift_arm_port, -360, 360)
