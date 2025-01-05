@@ -13,12 +13,16 @@ def run4b():
     turn(90, 180)
     forward(360, 270)
     turn(-30, 180)
-    forward(200, 180)
-    turn(-70, 180)
-    forward(215, 180)
+    forward(160, 180)
+    turn(-60, 180)
+    forward(175 , 180)
     turn(-75, 180)
-    forward(360, 170)
-    forward(-345, 150)
+    forward(185, 170)
+    forward(-150, 150)
+
+    # Back to home base
+    turn(90, 100)
+    forward(-840, 180)
 
 def run4c():
     motor.run_for_degrees(lift_arm_port, -250, 2200)
