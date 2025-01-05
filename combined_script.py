@@ -32,9 +32,11 @@ def reset_lift_arm_port():
 def run1a():
     # Octopus, one left of right corner of right base
     reset_lift_arm_port()
-    forward(100)
+    forward(200)
+    turn(395)
+    forward(-720)
     turn(85)
-    forward(700)
+    forward(-100)
 
 def run1b():
     # Change Shipping Lane
