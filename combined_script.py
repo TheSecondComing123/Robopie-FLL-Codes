@@ -157,15 +157,16 @@ def run5b():
 
 
 # --- run_6.py ---
-def run6():
+def run6(): # 1/4/2025
     # Aligner two spaces right of corner
+    reset_lift_arm_port()
     forward(150)
     turn(-70)
     forward(170)
     turn(45)
     forward(620)
-    turn(125)
-    forward(110)
+    turn(100)
+    forward(70)
     # Shark
     run_lift_arm(-320, 1660)
     run_lift_arm(240)
@@ -193,14 +194,13 @@ def run6():
     forward(200)
     turn(-250)
     #Back to home base
-    forward(-100)
+    forward(-250)
     turn(-90)
     forward(100)
-    turn(-50)
-    forward(250)
+    turn(-75)
+    forward(300)
     turn(60)
-    forward(330)
-    
+    forward(840)
 
 
 # Call all functions in order
