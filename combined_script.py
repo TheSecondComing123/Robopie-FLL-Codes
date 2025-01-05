@@ -18,7 +18,12 @@ def turn(degrees, speed=360, *, delay=0.25): # positive = left, negative = right
     motor.run_for_degrees(left_motor_port, degrees, speed)
     motor.run_for_degrees(right_motor_port, degrees, speed)
     time.sleep(abs(degrees) / speed + delay)
-
+def move_front_motor(degrees, speed=360):
+    motor.run_for_degrees(port.D, degrees, speed)
+    time.sleep(0.25)
+def move_back_motor(degrees, speed=360):
+    motor.run_for_degrees(port.C, degrees, speed)
+    time.sleep(0.25)
 def run_lift_arm(degrees, speed=360, *, delay=0.25): # positive = up, negative = down
     motor.run_for_degrees(lift_arm_port, degrees, speed)
     time.sleep(abs(degrees) / speed + delay)
