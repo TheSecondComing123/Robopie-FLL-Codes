@@ -5,12 +5,13 @@ This script combines the contents of a boilerplate file (`boilerplate.py`) with 
 in the current directory (excluding itself and the output file), dynamically detects all functions 
 defined in those files, and generates a single output file (`combined_script.py`). At the end of 
 the combined file, it adds calls to all detected functions in the order they appear in each file, 
-and files are processed alphabetically.
+excluding any functions defined in `boilerplate.py`.
 
 Features:
 - Combines the boilerplate file with all `.py` files, maintaining their order.
 - Detects all function definitions dynamically using regex.
-- Appends calls to all detected functions in the order they appear in the files.
+- Excludes functions from `boilerplate.py` in the final function call list.
+- Appends calls to all detected functions in the order they appear in their respective files.
 - Outputs the final result to `combined_script.py`.
 
 File Requirements:
@@ -24,7 +25,7 @@ Run the script in the directory containing `boilerplate.py` and other `.py` file
 The output file `combined_script.py` will contain:
 1. The contents of `boilerplate.py`.
 2. The contents of all `.py` files (excluding itself and `combined_script.py`), in alphabetical order.
-3. Function calls to all detected functions, in the order they appear in their respective files.
+3. Function calls to all detected functions, in the order they appear in their respective files (excluding `boilerplate.py`).
 """
 
 import os
@@ -36,11 +37,11 @@ OUTPUT_FILE = "combined_script.py"
 
 
 def get_python_files():
-    # Get all `.py` files in the directory except this script and the output file
+    # Get all `.py` files in the directory except this script, the output file, and boilerplate.py
     current_file = os.path.basename(__file__)
     python_files = [
         f for f in os.listdir()
-        if f.endswith('.py') and f not in {current_file, OUTPUT_FILE}
+        if f.endswith('.py') and f not in {current_file, OUTPUT_FILE, BOILERPLATE_FILE}
     ]
     # Sort files alphabetically
     return sorted(python_files)
@@ -77,6 +78,11 @@ def combine_files():
     # Read the content of all Python files and find functions
     python_contents = []
     all_function_calls = []
+    
+    # Collect functions in boilerplate.py to exclude them later
+    boilerplate_functions = find_functions_in_file(BOILERPLATE_FILE)
+    print(f"Found functions in boilerplate.py: {boilerplate_functions}")
+    
     for py_file in python_files:
         try:
             # Add file content to combined script
@@ -85,9 +91,11 @@ def combine_files():
             
             # Find callable functions in the file
             functions = find_functions_in_file(py_file)
+            # Filter out boilerplate functions
+            functions = [func for func in functions if func not in boilerplate_functions]
             # Append file-wise functions as a tuple (file_name, function_list)
             all_function_calls.append((py_file, functions))
-            print(f"Found functions in {py_file}: {functions}")
+            print(f"Found functions in {py_file} (excluding boilerplate): {functions}")
         except FileNotFoundError:
             print(f"Error: {py_file} not found!")
             continue
