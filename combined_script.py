@@ -265,13 +265,16 @@ def run6(): # 1/4/2025
     forward(840)
 
 
-# Call all functions in sorted order
-changing_shipping_lanes1b()
+# Call all functions in file order
 forward()
-krakens_treasure()
-move_back_motor()
+turn()
 move_front_motor()
+move_back_motor()
+run_lift_arm()
 reset_lift_arm_port()
+krakens_treasure()
+unexpected_encouter1a()
+changing_shipping_lanes1b()
 run4a()
 run4b()
 run4c()
@@ -279,6 +282,3 @@ run4c2()
 run5()
 run5b()
 run6()
-run_lift_arm()
-turn()
-unexpected_encouter1a()
