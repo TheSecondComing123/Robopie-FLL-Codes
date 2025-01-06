@@ -1,21 +1,33 @@
-def run1a():
-    # Octopus, one left of right corner of right base
-    reset_lift_arm_port()
+def unexpected_encouter1a(): # 1/5/2025
+    # Two to the left
     forward(200)
     turn(395)
     forward(-720)
-    turn(85)
-    forward(-100)
 
-def run1b():
-    # Change Shipping Lane
-    forward(-360)
-    turn(-110)
-    motor.run_for_degrees(lift_arm_port, -360, 360)
+def changing_shipping_lanes1b(): # 1/5/2025
+    # forward(-360)
+    # turn(-100)
+    # motor.run_for_degrees(lift_arm_port, -360, 360)
+    # time.sleep(360)
+    # forward(198)
+    # motor.run_for_degrees(lift_arm_port, 360, 360)
+    # time.sleep(0.5)
+    # turn(-100)
+    # forward(-180)
+    # motor.run_for_degrees(lift_arm_port, 360, 360)
+    forward(200)
     time.sleep(1)
-    forward(230)
-    motor.run_for_degrees(lift_arm_port, 360, 360)
+    turn(165)
+    forward(-50)
+    motor.run_for_degrees(lift_arm_port, -360, 380)
     time.sleep(0.5)
-    turn(-100)
-    forward(-180)
-    motor.run_for_degrees(lift_arm_port, 360, 360)
+    forward(160)
+    motor.run_for_degrees(lift_arm_port, 135, 380)
+    time.sleep(0.5)
+    turn(-105,200)
+    motor.run_for_degrees(lift_arm_port, 50, 380)
+    turn(-10,2200)
+    turn(-50,2200)
+    forward(-60)
+    turn(-50)
+    forward(500)
