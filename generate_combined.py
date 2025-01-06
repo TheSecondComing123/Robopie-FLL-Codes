@@ -4,12 +4,13 @@ generate_combined.py
 This script combines the contents of a boilerplate file (`boilerplate.py`) with all `.py` files
 in the current directory (excluding itself and the output file), dynamically detects all functions 
 defined in those files, and generates a single output file (`combined_script.py`). At the end of 
-the combined file, it adds calls to all detected functions in sorted order.
+the combined file, it adds calls to all detected functions in the order they appear in each file, 
+and files are processed alphabetically.
 
 Features:
 - Combines the boilerplate file with all `.py` files, maintaining their order.
 - Detects all function definitions dynamically using regex.
-- Appends calls to all detected functions at the end of the combined script.
+- Appends calls to all detected functions in the order they appear in the files.
 - Outputs the final result to `combined_script.py`.
 
 File Requirements:
@@ -23,7 +24,7 @@ Run the script in the directory containing `boilerplate.py` and other `.py` file
 The output file `combined_script.py` will contain:
 1. The contents of `boilerplate.py`.
 2. The contents of all `.py` files (excluding itself and `combined_script.py`), in alphabetical order.
-3. Function calls to all detected functions, sorted alphabetically.
+3. Function calls to all detected functions, in the order they appear in their respective files.
 """
 
 import os
@@ -84,7 +85,8 @@ def combine_files():
             
             # Find callable functions in the file
             functions = find_functions_in_file(py_file)
-            all_function_calls.extend(functions)
+            # Append file-wise functions as a tuple (file_name, function_list)
+            all_function_calls.append((py_file, functions))
             print(f"Found functions in {py_file}: {functions}")
         except FileNotFoundError:
             print(f"Error: {py_file} not found!")
@@ -94,9 +96,10 @@ def combine_files():
     combined_content = boilerplate_content + "\n\n" + "\n\n".join(python_contents)
     
     # Add calls to all functions found
-    combined_content += "\n\n# Call all functions in sorted order\n"
-    for func in sorted(all_function_calls):
-        combined_content += f"{func}()\n"
+    combined_content += "\n\n# Call all functions in file order\n"
+    for file, functions in all_function_calls:
+        for func in functions:
+            combined_content += f"{func}()\n"
     
     # Write to the output file
     with open(OUTPUT_FILE, 'w') as output:
