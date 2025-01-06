@@ -2,9 +2,9 @@
 generate_combined.py
 
 This script combines the contents of a boilerplate file (`boilerplate.py`) with all `.py` files
-in the current directory (excluding itself), dynamically detects all functions defined in those files, 
-and generates a single output file (`combined_script.py`). At the end of the combined file, it adds calls 
-to all detected functions in sorted order.
+in the current directory (excluding itself and the output file), dynamically detects all functions 
+defined in those files, and generates a single output file (`combined_script.py`). At the end of 
+the combined file, it adds calls to all detected functions in sorted order.
 
 Features:
 - Combines the boilerplate file with all `.py` files, maintaining their order.
@@ -22,19 +22,8 @@ Run the script in the directory containing `boilerplate.py` and other `.py` file
 
 The output file `combined_script.py` will contain:
 1. The contents of `boilerplate.py`.
-2. The contents of all `.py` files (excluding itself), in alphabetical order.
+2. The contents of all `.py` files (excluding itself and `combined_script.py`), in alphabetical order.
 3. Function calls to all detected functions, sorted alphabetically.
-
-Example:
-If the directory contains:
-- boilerplate.py
-- file1.py (with `func1()` and `func2()`)
-- file2.py (with `func3()`)
-
-The generated `combined_script.py` will contain:
-- Contents of `boilerplate.py`
-- Contents of `file1.py` and `file2.py`
-- Calls to `func1()`, `func2()`, and `func3()`, in sorted order.
 """
 
 import os
@@ -46,9 +35,12 @@ OUTPUT_FILE = "combined_script.py"
 
 
 def get_python_files():
-    # Get all `.py` files in the directory except this script
+    # Get all `.py` files in the directory except this script and the output file
     current_file = os.path.basename(__file__)
-    python_files = [f for f in os.listdir() if f.endswith('.py') and f != current_file]
+    python_files = [
+        f for f in os.listdir()
+        if f.endswith('.py') and f not in {current_file, OUTPUT_FILE}
+    ]
     # Sort files alphabetically
     return sorted(python_files)
 
