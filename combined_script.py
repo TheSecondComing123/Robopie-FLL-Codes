@@ -88,6 +88,41 @@ def krakens_treasure():
     forward(-250,120)
 
 
+# --- run5.py ---
+#Sonar discovery and send the submersible!
+def run5():
+    motor.run_for_degrees(lift_arm_port, 180,2200)
+    forward(230)
+    turn(35)
+    forward(200)
+    turn(42)
+    forward(300)
+    turn(-30)
+    forward(200)
+    motor.run_for_degrees(lift_arm_port, -1000,2200)
+    forward(180)
+    forward(-200,2200)
+    turn(40,2200)
+    motor.run_for_degrees(lift_arm_port, -400,2200)
+    forward(60,2200)
+    turn(40,2200)
+    #forward(90)
+    #turn(-300)
+    #forward(300)
+    #turn(20)
+    #turn(50)
+    motor.run_for_degrees(lift_arm_port, -250, 2200)
+    forward(120)
+    turn(-90)
+    forward(200)
+    turn(-25)
+    forward(400)
+    turn(-30)
+    forward(1200)
+    turn(-70)
+    forward(600)
+
+
 # --- run_1.py ---
 def unexpected_encouter1a(): # 1/5/2025
     # Two to the left
@@ -191,43 +226,6 @@ def run4c2():
     turn(60)
 
 
-# --- run_5.py ---
-def run5():  
-    # part of pink run!!! this should be taken when it arrives to be aligned.  
-    motor.run_for_degrees(lift_arm_port, -250, 2200)
-    forward(120)
-    turn(-90)
-    forward(200)
-    turn(-25)
-    forward(400)
-    turn(-30)
-    forward(1200)
-    turn(-70)
-    forward(600)
-    
-def run5b():
-    motor.run_for_degrees(lift_arm_port, 180,2200)
-    forward(230)
-    turn(35)
-    forward(200)
-    turn(42)
-    forward(300)
-    turn(-30)
-    forward(200)
-    motor.run_for_degrees(lift_arm_port, -1000,2200)
-    forward(180)
-    forward(-200,2200)
-    turn(40,2200)
-    motor.run_for_degrees(lift_arm_port, -400,2200)
-    forward(60,2200)
-    turn(40,2200)
-    #forward(90)
-    #turn(-300)
-    #forward(300)
-    #turn(20)
-    #turn(50)
-
-
 # --- run_6.py ---
 def run6(): # 1/4/2025
     # Aligner two spaces right of corner
@@ -279,12 +277,11 @@ def run6(): # 1/4/2025
 artificialhabitat()
 feed_whale()
 krakens_treasure()
+run5()
 unexpected_encouter1a()
 changing_shipping_lanes1b()
 run4a()
 run4b()
 run4c()
 run4c2()
-run5()
-run5b()
 run6()
