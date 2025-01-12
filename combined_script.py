@@ -61,7 +61,7 @@ def artificialhabitat():
 
 
 # --- feed_whale.py ---
-def run3():
+def feed_whale():
     forward(270)
     turn(90, 180)
     forward(360, 270)
@@ -277,7 +277,7 @@ def run6(): # 1/4/2025
 
 # Call all functions in file order
 artificialhabitat()
-run3()
+feed_whale()
 krakens_treasure()
 unexpected_encouter1a()
 changing_shipping_lanes1b()
