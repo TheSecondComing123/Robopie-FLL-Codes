@@ -194,7 +194,7 @@ def changing_shipping_lanes1b(): # 1/5/2025
 
 
 # --- run_6.py ---
-ef run6(): # 1/12/2025
+def run6(): # 1/12/2025
     # Aligner two spaces right of corner
     reset_lift_arm_port()
     forward(150)
@@ -203,7 +203,7 @@ ef run6(): # 1/12/2025
     turn(45)
     forward(620)
     turn(105)
-    forward(70)
+    forward(65)
     # Shark
     run_lift_arm(-320, 1660)
     run_lift_arm(240)
@@ -233,10 +233,10 @@ ef run6(): # 1/12/2025
     #Back to home base
     forward(-100)
     reset_lift_arm_port()
-    turn(-145)
-    forward(95)
-    turn(100)
-    forward(950)
+    turn(-125)
+    forward(390)
+    turn(70)
+    forward(650)
 
 
 # --- unspecified_run.py ---
@@ -259,4 +259,5 @@ krakens_treasure()
 run5()
 unexpected_encouter1a()
 changing_shipping_lanes1b()
+run6()
 run4c2()
