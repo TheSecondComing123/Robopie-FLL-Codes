@@ -133,20 +133,6 @@ def changing_shipping_lanes1b(): # 1/5/2025
 
 
 # --- run_4.py ---
-
-def run4a():
-    #Dumps the krill in the whale
-    forward(270)
-    turn(90, 180)
-    forward(360, 270)
-    turn(-30, 180)
-    forward(160, 180)
-    turn(-60, 180)
-    forward(175 , 180)
-    turn(-75, 180)
-    forward(185, 170)
-    forward(-150, 150)
-
 def run4b():
     #Get hoop while comes back
     forward(-100, 180)
@@ -252,7 +238,6 @@ krakens_treasure()
 run5()
 unexpected_encouter1a()
 changing_shipping_lanes1b()
-run4a()
 run4b()
 run4c()
 run4c2()
