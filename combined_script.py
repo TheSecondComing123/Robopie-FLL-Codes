@@ -121,7 +121,7 @@ def changing_shipping_lanes1b(): # 1/5/2025
 # --- run_4.py ---
 
 def run4a():
-    #Collects the krill + dumps the krill in the whale
+    #Dumps the krill in the whale
     forward(270)
     turn(90, 180)
     forward(360, 270)
