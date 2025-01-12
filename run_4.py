@@ -1,14 +1,6 @@
-def run4a():
-    forward(-100, 180)
-    turn(-20, 180)
-    forward(165, 180)
-    forward(-180)
-    turn(100, 180)
-    forward(-750, 180)
-    turn(45, 180)
-    forward(-130, 205)
 
-def run4b():
+def run4a():
+    #Collects the krill + dumps the krill in the whale
     forward(270)
     turn(90, 180)
     forward(360, 270)
@@ -20,11 +12,23 @@ def run4b():
     forward(185, 170)
     forward(-150, 150)
 
+def run4b():
+    #Get hoop while comes back
+    forward(-100, 180)
+    turn(-20, 180)
+    forward(165, 180)
+    forward(-180)
+    turn(100, 180)
+    forward(-750, 180)
+    turn(45, 180)
+    forward(-130, 205)
+
     # Back to home base
     turn(90, 100)
     forward(-840, 180)
 
 def run4c():
+    #Artificial Habitat
     motor.run_for_degrees(lift_arm_port, -250, 2200)
     forward(60)
     turn(60)
@@ -51,6 +55,7 @@ def run4c():
     # forward(200)
 
 def run4c2():
+    #Not known in this time situation.
     forward(40)
     turn(60)
     forward(200)
