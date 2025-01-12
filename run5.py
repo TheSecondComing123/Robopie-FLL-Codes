@@ -1,17 +1,5 @@
-def run5():  
-    # part of pink run!!! this should be taken when it arrives to be aligned.  
-    motor.run_for_degrees(lift_arm_port, -250, 2200)
-    forward(120)
-    turn(-90)
-    forward(200)
-    turn(-25)
-    forward(400)
-    turn(-30)
-    forward(1200)
-    turn(-70)
-    forward(600)
-    
-def run5b():
+#Sonar discovery and send the submersible!
+def run5():
     motor.run_for_degrees(lift_arm_port, 180,2200)
     forward(230)
     turn(35)
@@ -32,3 +20,13 @@ def run5b():
     #forward(300)
     #turn(20)
     #turn(50)
+    motor.run_for_degrees(lift_arm_port, -250, 2200)
+    forward(120)
+    turn(-90)
+    forward(200)
+    turn(-25)
+    forward(400)
+    turn(-30)
+    forward(1200)
+    turn(-70)
+    forward(600)
