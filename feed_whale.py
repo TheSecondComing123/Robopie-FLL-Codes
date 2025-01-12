@@ -1,0 +1,11 @@
+def run3():
+    forward(270)
+    turn(90, 180)
+    forward(360, 270)
+    turn(-30, 180)
+    forward(200, 180)
+    turn(-70, 180)
+    forward(230, 180)
+    turn(-80, 180)
+    forward(200, 180)
+    forward(-90, 180)
