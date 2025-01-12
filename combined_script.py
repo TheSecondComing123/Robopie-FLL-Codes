@@ -33,6 +33,35 @@ def reset_lift_arm_port():
     time.sleep(0.25)
 
 
+# --- artificial_habitat.py ---
+def artificial_habitat():
+    #Artificial Habitat
+    motor.run_for_degrees(lift_arm_port, -250, 2200)
+    forward(60)
+    turn(60)
+    forward(200)
+    turn(100)
+    forward(300)
+    turn(45)
+    forward(100)
+    turn(-102,2200)
+    turn(10,2200)
+    forward(-100)
+    #turn(15)
+    forward(180)
+    # turn(70)
+    motor.run_for_degrees(lift_arm_port, 550, 2200)
+    forward(250)
+    forward(-175)
+    motor.run_for_degrees(lift_arm_port, -210, 2200)
+    turn(-10)
+    forward(280,2200)
+    forward(-500)
+    # motor.run_for_degrees(lift_arm_port, -100, 2000)
+    # motor.run_for_degrees(lift_arm_port,100,2000)
+    # forward(200)
+
+
 # --- collect_krill.py ---
 def run3():
     forward(270)
@@ -248,6 +277,7 @@ def run6(): # 1/4/2025
 
 
 # Call all functions in file order
+artificial_habitat()
 run3()
 feed_whale()
 krakens_treasure()
