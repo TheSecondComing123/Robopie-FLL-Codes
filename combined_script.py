@@ -224,20 +224,6 @@ def run6(): # 1/4/2025
 
 
 # --- unspecified_run.py ---
-def run4b():
-    #IDK WHAT THIS DOES TO TEST
-    forward(-100, 180)
-    turn(-20, 180)
-    forward(165, 180)
-    forward(-180)
-    turn(100, 180)
-    forward(-750, 180)
-    turn(45, 180)
-    forward(-130, 205)
-
-    # Back to home base
-    turn(90, 100)
-    forward(-840, 180)
 def run4c2():
     #Not known in this time situation.
     forward(40)
@@ -257,5 +243,4 @@ run5()
 unexpected_encouter1a()
 changing_shipping_lanes1b()
 run6()
-run4b()
 run4c2()
