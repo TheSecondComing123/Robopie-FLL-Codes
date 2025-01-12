@@ -33,20 +33,6 @@ def reset_lift_arm_port():
     time.sleep(0.25)
 
 
-# --- feed_whale.py ---
-def feed_whale():
-    forward(270)
-    turn(90, 180)
-    forward(360, 270)
-    turn(-30, 180)
-    forward(200, 180)
-    turn(-70, 180)
-    forward(230, 180)
-    turn(-80, 180)
-    forward(200, 180)
-    forward(-90, 180)
-
-
 # --- krakens_treasure.py ---
 def krakens_treasure():
     #Aligner four spaces right of corner
@@ -247,7 +233,6 @@ def run6(): # 1/4/2025
 
 
 # Call all functions in file order
-feed_whale()
 krakens_treasure()
 run5()
 unexpected_encouter1a()
