@@ -163,7 +163,7 @@ def run4b():
     turn(90, 100)
     forward(-840, 180)
 
-def run4c():
+def run4():
     #Artificial Habitat
     motor.run_for_degrees(lift_arm_port, -250, 2200)
     forward(60)
@@ -255,6 +255,6 @@ run5()
 unexpected_encouter1a()
 changing_shipping_lanes1b()
 run4b()
-run4c()
+run4()
 run4c2()
 run6()
