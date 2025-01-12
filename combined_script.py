@@ -33,7 +33,7 @@ def reset_lift_arm_port():
     time.sleep(0.25)
 
 
-# --- Collect_Krill.py ---
+# --- collect_krill.py ---
 def run3():
     forward(270)
     turn(90, 180)
