@@ -1,4 +1,4 @@
-def run3():
+def feed_whale():
     forward(270)
     turn(90, 180)
     forward(360, 270)
