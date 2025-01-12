@@ -47,6 +47,21 @@ def run3():
     forward(-90, 180)
 
 
+# --- feed_whale.py ---
+def feed_whale():
+    #Dumps the krill in the whale
+    forward(270)
+    turn(90, 180)
+    forward(360, 270)
+    turn(-30, 180)
+    forward(160, 180)
+    turn(-60, 180)
+    forward(175 , 180)
+    turn(-75, 180)
+    forward(185, 170)
+    forward(-150, 150)
+
+
 # --- krakens_treasure.py ---
 def krakens_treasure():
     #Aligner four spaces right of corner
@@ -234,6 +249,7 @@ def run6(): # 1/4/2025
 
 # Call all functions in file order
 run3()
+feed_whale()
 krakens_treasure()
 run5()
 unexpected_encouter1a()
