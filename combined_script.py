@@ -94,18 +94,16 @@ def run4a2():
 
 # --- get_hoop_out.py ---
 def run4b():
-    #Get hoop while comes back
-    forward(-100, 180)
-    turn(-20, 180)
-    forward(225, 180)
-    forward(-180)
-    turn(100, 180)
-    forward(-750, 180)
-
-
-    # Back to home base
-    turn(90, 100)
-    forward(-840, 180)
+    forward(180)
+    turn(90, 180)
+    forward(340, 270)
+    turn(-3, 180)
+    forward(200, 180)
+    turn(-70, 180)
+    forward(230, 180)
+    turn(-80, 180)
+    forward(200, 180)
+    forward(-90, 180)
 
 
 # --- krakens_treasure.py ---
