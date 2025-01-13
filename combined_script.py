@@ -34,7 +34,7 @@ def reset_lift_arm_port():
 
 
 # --- artificial_habitat.py ---
-def artificial_habitat():
+def run4c():
     #Artificial Habitat
     motor.run_for_degrees(lift_arm_port, -250, 2200)
     forward(60)
@@ -250,7 +250,7 @@ def run4c2():
 
 
 # Call all functions in file order
-artificial_habitat()
+run4c()
 run3()
 run3()
 get_hoop_out()
