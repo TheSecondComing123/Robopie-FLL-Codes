@@ -1,4 +1,4 @@
-def artificial_habitat():
+def run4c():
     #Artificial Habitat
     motor.run_for_degrees(lift_arm_port, -250, 2200)
     forward(60)
