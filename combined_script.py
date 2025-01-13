@@ -77,18 +77,17 @@ def run3():
 
 
 # --- feed_whale.py ---
-def feed_whale():
-    #Dumps the krill in the whale
-    forward(270)
+def run3():
+    forward(180)
     turn(90, 180)
-    forward(360, 270)
-    turn(-30, 180)
-    forward(160, 180)
-    turn(-60, 180)
-    forward(175 , 180)
-    turn(-75, 180)
-    forward(185, 170)
-    forward(-150, 150)
+    forward(340, 270)
+    turn(-3, 180)
+    forward(200, 180)
+    turn(-70, 180)
+    forward(230, 180)
+    turn(-80, 180)
+    forward(200, 180)
+    forward(-90, 180)
 
 
 # --- get_hoop_out.py ---
@@ -253,7 +252,7 @@ def run4c2():
 # Call all functions in file order
 artificial_habitat()
 run3()
-feed_whale()
+run3()
 get_hoop_out()
 krakens_treasure()
 run5()
