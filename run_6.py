@@ -1,4 +1,4 @@
-def run6(): # 1/12/2025
+def run6(): # 1/18/2025
     # Aligner two spaces right of corner
     reset_lift_arm_port()
     forward(150)
@@ -38,6 +38,6 @@ def run6(): # 1/12/2025
     forward(-100)
     reset_lift_arm_port()
     turn(-125)
-    forward(390)
+    forward(450)
     turn(70)
-    forward(650)
+    forward(900)
