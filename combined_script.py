@@ -98,18 +98,19 @@ def run4a2():
     forward(-840, 200)
 
 
-# --- get_hoop_out.py ---
+# --- get_hoop.py ---
 def run4b():
-    forward(180)
-    turn(90, 180)
-    forward(340, 270)
-    turn(-3, 180)
-    forward(200, 180)
-    turn(-70, 180)
-    forward(230, 180)
-    turn(-80, 180)
-    forward(200, 180)
-    forward(-90, 180)
+    forward(-100, 180)
+    turn(-20, 180)
+    forward(225, 180)
+    forward(-180)
+    turn(150, 180)
+    turn(-30)
+    forward(-750, 180)
+
+    # Back to home base
+    turn(90, 100)
+    forward(-840, 180)
 
 
 # --- krakens_treasure.py ---
