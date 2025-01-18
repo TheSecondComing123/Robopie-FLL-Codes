@@ -1,10 +1,10 @@
-def unexpected_encouter1a(): # 1/12/2025
-    # Two to the left
+def unexpected_encouter1a(): # 1/18/2025
+    # One to the left of right corner
     forward(150)
     turn(395)
     forward(-720)
 
-def changing_shipping_lanes1b(): # 1/12/2025
+def changing_shipping_lanes1b(): # 1/18/2025
     # forward(-360)
     # turn(-100)
     # motor.run_for_degrees(lift_arm_port, -360, 360)
