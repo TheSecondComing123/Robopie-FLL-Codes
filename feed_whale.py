@@ -1,6 +1,6 @@
 def run4a2():
     #Working version as of 1/18/2025
-    #next to one right of left corner
+    #next to one left of right corner
     #dumps the krill in the whale
     forward(270)
     turn(90, 180)
