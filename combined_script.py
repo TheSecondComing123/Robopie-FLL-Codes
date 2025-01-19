@@ -134,6 +134,8 @@ def krakens_treasure():
 
 # --- run5.py ---
 #Sonar discovery and send the submersible!
+#Version 1/11/2025
+#Currently unfinished
 def run5():
     motor.run_for_degrees(lift_arm_port, 180,2200)
     forward(230)
