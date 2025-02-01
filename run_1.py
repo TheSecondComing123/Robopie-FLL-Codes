@@ -1,20 +1,11 @@
 def unexpected_encouter1a(): # 1/18/2025
     # One to the left of right corner
+    reset_lift_arm_port()
     forward(150)
     turn(395)
     forward(-720)
 
 def changing_shipping_lanes1b(): # 1/18/2025
-    # forward(-360)
-    # turn(-100)
-    # motor.run_for_degrees(lift_arm_port, -360, 360)
-    # time.sleep(360)
-    # forward(198)
-    # motor.run_for_degrees(lift_arm_port, 360, 360)
-    # time.sleep(0.5)
-    # turn(-100)
-    # forward(-180)
-    # motor.run_for_degrees(lift_arm_port, 360, 360)
     forward(200)
     time.sleep(1)
     turn(150)
